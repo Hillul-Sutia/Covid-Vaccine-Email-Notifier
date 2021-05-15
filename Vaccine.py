@@ -55,8 +55,8 @@ while True:
     else:
         email_msg = email.message.EmailMessage()
         email_msg["Subject"] = "Vaccination Slot Open"
-        username = "hillulchuita@gmail.com"
-        password = "C@me4myself"
+        username = " yourEmail"
+        password = "*****"
         email_msg["From"] = username
         email_msg["To"] = username
         email_msg.set_content(content)
