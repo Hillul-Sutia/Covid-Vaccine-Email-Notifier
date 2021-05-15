@@ -34,13 +34,13 @@ while True:
                             #print(center)
                             for session in center['sessions']:
                                 if (session['min_age_limit'] <=age and session['available_capacity']> 0):
-                                    print("Pincode: " + pincode)
-                                    print("Available on: {}".format(givendate))
-                                    print("\t", center["name"])
-                                    print("\t", center["block_name"])
-                                    print("\t Price: ",center["fee_type"])
-                                    print("\t Availability : ", session["vaccine"])
-                                    print("\n")
+                                    #print("Pincode: " + pincode)
+                                    #print("Available on: {}".format(givendate))
+                                    #print("\t", center["name"])
+                                    #print("\t", center["block_name"])
+                                    #print("\t Price: ",center["fee_type"])
+                                    #print("\t Availability : ", session["vaccine"])
+                                    #print("\n")
 
                                     counter += 1
                                 else:
