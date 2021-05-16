@@ -4,10 +4,11 @@ from datetime import datetime,timedelta
 import json
 import smtplib
 
+
 print("Starting search for covid vaccine slots!")
 
-age = 19
-pincodes= ["786001","786003","786004"]
+age = 
+pincodes= [" "]
 print_flag = 'Y'
 num_days = 7
 
@@ -34,37 +35,35 @@ while True:
                             #print(center)
                             for session in center['sessions']:
                                 if (session['min_age_limit'] <=age and session['available_capacity']> 0):
-                                    #print("Pincode: " + pincode)
-                                    #print("Available on: {}".format(givendate))
-                                    #print("\t", center["name"])
-                                    #print("\t", center["block_name"])
-                                    #print("\t Price: ",center["fee_type"])
-                                    #print("\t Availability : ", session["vaccine"])
-                                    #print("\n")
+                                    s = smtplib.SMTP('smtp.gmail.com',587)
+                                    sender= " "
+                                    s_password = " "
+                                    
+                                    receivers = [""]
+    
+                                    msg= "Vaccination slot available"
 
+                                    for receiver in receivers:
+                                        s.ehlo()
+                                        s.starttls()
+                                        s.login(sender,s_password)
+                                        s.sendmail(sender,receiver,msg)
+                                        s.quit()
+                                        
                                     counter += 1
+                                    
                                 else:
                                     pass
                 else:
                     pass
             else:       
-                print("No response received!")
+                pass
             
     if (counter == 0):
         print("No Vaccination slot avaliable!")
     else:
-        email_msg = email.message.EmailMessage()
-        email_msg["Subject"] = "Vaccination Slot Open"
-        username = " yourEmail"
-        password = "*****"
-        email_msg["From"] = username
-        email_msg["To"] = username
-        email_msg.set_content(content)
-        with smtplib.SMTP(host = 'smtp.gmail.com',port='587') as server:
-            server.starttls()
-            server.login(username,password)
-            server.send_message(email_msg,username,username)
-        print("Search Completed!")
+        
+        pass
 
 
     dt = datetime.now()+ timedelta(minutes= 3)
